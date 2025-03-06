@@ -11,7 +11,7 @@ categories: projects
 
 **Install Instructions** 
 
-1. [Download the Zip](https://drive.google.com/file/d/1zuNjpFyAbLV3_P5CUDDhFsScUI0axu9w/view?usp=sharing)
+1. [Download the Zip](https://drive.google.com/file/d/1-jfXkatJukRXDq0p2iFz1_or0YQniyLQ/view?usp=sharing)
 2. Unzip & Run the application
 3. When security requests, permit the application
 
