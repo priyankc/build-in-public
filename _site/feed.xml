@@ -1,8 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-05T22:40:28-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Building in Public - Updates</title><entry><title type="html">Pivoting to Code Reviews: A Higher Impact Opportunity</title><link href="http://localhost:4000/projects/2024/03/10/pivoting-to-code-reviews.html" rel="alternate" type="text/html" title="Pivoting to Code Reviews: A Higher Impact Opportunity" /><published>2024-03-10T00:00:00-08:00</published><updated>2024-03-10T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/10/pivoting-to-code-reviews</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/10/pivoting-to-code-reviews.html"><![CDATA[<p>After some research, we discovered design docs are written too infrequently to create immediate impact. Instead, we’re focusing on a daily pain point: code reviews.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T08:42:25-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">New Prototype: Help you do better code reviews</title><link href="http://localhost:4000/projects/2024/03/10/prototype-code-review.html" rel="alternate" type="text/html" title="New Prototype: Help you do better code reviews" /><published>2024-03-10T00:00:00-08:00</published><updated>2024-03-10T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/10/prototype-code-review</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/10/prototype-code-review.html"><![CDATA[<p><strong>Hypothesis:</strong> Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.</p>
 
-<p>We’ve built an AI-powered code review assistant. Select any diff or commit, and it provides a high-level walkthrough of the changes. This helps reviewers quickly understand the context and impact of changes.</p>
+<p><strong>Solution:</strong> In many teams, developers walk reviewers through a diff to provide high-level context. This verbal explanation helps the reviewer load the changes into memory, making the review process more effective. Our AI aims to replicate this process by providing a guided walkthrough of any given diff.</p>
 
-<p>Early feedback has been promising. More updates coming soon!</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[After some research, we discovered design docs are written too infrequently to create immediate impact. Instead, we’re focusing on a daily pain point: code reviews.]]></summary></entry><entry><title type="html">Introducing Alexandria: A Modern Design Doc Writing Tool</title><link href="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html" rel="alternate" type="text/html" title="Introducing Alexandria: A Modern Design Doc Writing Tool" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/introducing-alexandria</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html"><![CDATA[<p>Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.</p>
+<p><strong>Install Instructions</strong></p>
+
+<ol>
+  <li><a href="https://drive.google.com/file/d/1zuNjpFyAbLV3_P5CUDDhFsScUI0axu9w/view?usp=sharing">Download the Zip</a></li>
+  <li>Unzip &amp; Run the application</li>
+  <li>When security requests, permit the application</li>
+</ol>
+
+<p><strong>Usage Instructions</strong>**</p>
+<ol>
+  <li>Add a root folder of your repo (left top)</li>
+  <li>In the right, select the diff or branch</li>
+  <li>Once the instructions are ready, you will see the first instruction with a sticky. You can navigate through instructions by clicking next / prev</li>
+  <li>Once overview is ready you can click the Overview tab.</li>
+  <li>Click the little eye / pencil icon on the tab to see it in rich view</li>
+</ol>
+
+<p><img src="/assets/images/howto.png" alt="Screenshot" /></p>
+
+<p><strong>Background</strong></p>
+
+<p>In our last iteration, we explored improving design docs. We have got great feedback from 10+ users. Based on the learnings from that prototype, this week we wanted to learn about challenges involved in understanding code. We will focus on improving code reviews, a daily activity that requires critical reading and decision-making.</p>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Hypothesis: Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.]]></summary></entry><entry><title type="html">Introducing Alexandria: A Modern Design Doc Writing Tool</title><link href="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html" rel="alternate" type="text/html" title="Introducing Alexandria: A Modern Design Doc Writing Tool" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/introducing-alexandria</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html"><![CDATA[<p>Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.</p>
 
 <p>Installation:
 1.⁠ <a href="https://drive.google.com/file/d/1AR9tz7W1YGqCpRvn8O5HUM2vo59d9fj4/view?usp=drive_link">⁠Alexandria App (Mac Silicone)</a></p>
@@ -26,4 +57,14 @@
 
 <p>The core challenge I’m focusing on: AI code generation is going to only increase and the lack of structured design thinking will lead to bloated, inconsistent architectures. While design phases are critical for decision-making, engineers often skip writing design docs, a key lever for this process. This creates issues down the line.</p>
 
-<p>For this week, we’re testing this hypothesis: “Better design docs lead to better architectural decisions and help manage complexity. Because it takes a lot of effort, developers don’t take initiative to write design docs. If there is a tool that can significantly simplify writing a design doc, more developers will write better design docs.”</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Software Engineering Quality is a problem close to my heart, both as an Engineering Manager and Developer. I have strong opinions in this space and access to friends who can provide early feedback.]]></summary></entry></feed>
+<p>For this week, we’re testing this hypothesis: “Better design docs lead to better architectural decisions and help manage complexity. Because it takes a lot of effort, developers don’t take initiative to write design docs. If there is a tool that can significantly simplify writing a design doc, more developers will write better design docs.”</p>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Software Engineering Quality is a problem close to my heart, both as an Engineering Manager and Developer. I have strong opinions in this space and access to friends who can provide early feedback.]]></summary></entry></feed>
