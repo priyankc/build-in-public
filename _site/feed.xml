@@ -1,11 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T08:42:25-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">New Prototype: Help you do better code reviews</title><link href="http://localhost:4000/projects/2024/03/10/prototype-code-review.html" rel="alternate" type="text/html" title="New Prototype: Help you do better code reviews" /><published>2024-03-10T00:00:00-08:00</published><updated>2024-03-10T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/10/prototype-code-review</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/10/prototype-code-review.html"><![CDATA[<p><strong>Hypothesis:</strong> Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T14:55:41-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">Learnings: Code Review Tool</title><link href="http://localhost:4000/projects/2025/03/06/learnings-code-reviews.html" rel="alternate" type="text/html" title="Learnings: Code Review Tool" /><published>2025-03-06T00:00:00-08:00</published><updated>2025-03-06T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/06/learnings-code-reviews</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/06/learnings-code-reviews.html"><![CDATA[<ul>
+  <li>(+) They love the tutorial and how they can understand the PR</li>
+  <li>(Request) They already have well documented Jira ticket. Reviewer spends a lot of time thinking if the PR is addressing the Jira. If the tool analyzes that and tells them the gaps, it will be super useful to them.</li>
+  <li>(+) Loved the code architecture representation</li>
+  <li>(-) There is a markdown rendering error for list items</li>
+  <li>(-) There were initial bugs around assuming main branch and computing diff. Fixed and updated links</li>
+</ul>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+) They love the tutorial and how they can understand the PR (Request) They already have well documented Jira ticket. Reviewer spends a lot of time thinking if the PR is addressing the Jira. If the tool analyzes that and tells them the gaps, it will be super useful to them. (+) Loved the code architecture representation (-) There is a markdown rendering error for list items (-) There were initial bugs around assuming main branch and computing diff. Fixed and updated links]]></summary></entry><entry><title type="html">New Prototype: Help you do better code reviews</title><link href="http://localhost:4000/projects/2025/03/05/prototype-code-review.html" rel="alternate" type="text/html" title="New Prototype: Help you do better code reviews" /><published>2025-03-05T00:00:00-08:00</published><updated>2025-03-05T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/05/prototype-code-review</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/05/prototype-code-review.html"><![CDATA[<p><strong>Hypothesis:</strong> Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.</p>
 
 <p><strong>Solution:</strong> In many teams, developers walk reviewers through a diff to provide high-level context. This verbal explanation helps the reviewer load the changes into memory, making the review process more effective. Our AI aims to replicate this process by providing a guided walkthrough of any given diff.</p>
 
 <p><strong>Install Instructions</strong></p>
 
 <ol>
-  <li><a href="https://drive.google.com/file/d/1zuNjpFyAbLV3_P5CUDDhFsScUI0axu9w/view?usp=sharing">Download the Zip</a></li>
+  <li><a href="https://drive.google.com/file/d/1-jfXkatJukRXDq0p2iFz1_or0YQniyLQ/view?usp=sharing">Download the Zip</a></li>
   <li>Unzip &amp; Run the application</li>
   <li>When security requests, permit the application</li>
 </ol>
