@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-06T14:55:41-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">Learnings: Code Review Tool</title><link href="http://localhost:4000/projects/2025/03/06/learnings-code-reviews.html" rel="alternate" type="text/html" title="Learnings: Code Review Tool" /><published>2025-03-06T00:00:00-08:00</published><updated>2025-03-06T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/06/learnings-code-reviews</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/06/learnings-code-reviews.html"><![CDATA[<ul>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-09T22:20:03-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">Learnings: Code Review Tool</title><link href="http://localhost:4000/projects/2025/03/06/learnings-code-reviews.html" rel="alternate" type="text/html" title="Learnings: Code Review Tool" /><published>2025-03-06T00:00:00-08:00</published><updated>2025-03-06T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/06/learnings-code-reviews</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/06/learnings-code-reviews.html"><![CDATA[<ul>
   <li>(+) They love the tutorial and how they can understand the PR</li>
   <li>(Request) They already have well documented Jira ticket. Reviewer spends a lot of time thinking if the PR is addressing the Jira. If the tool analyzes that and tells them the gaps, it will be super useful to them.</li>
   <li>(+) Loved the code architecture representation</li>
@@ -14,7 +14,25 @@
     .post-title {
         font-size: 36px;
     }
-</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+) They love the tutorial and how they can understand the PR (Request) They already have well documented Jira ticket. Reviewer spends a lot of time thinking if the PR is addressing the Jira. If the tool analyzes that and tells them the gaps, it will be super useful to them. (+) Loved the code architecture representation (-) There is a markdown rendering error for list items (-) There were initial bugs around assuming main branch and computing diff. Fixed and updated links]]></summary></entry><entry><title type="html">New Prototype: Help you do better code reviews</title><link href="http://localhost:4000/projects/2025/03/05/prototype-code-review.html" rel="alternate" type="text/html" title="New Prototype: Help you do better code reviews" /><published>2025-03-05T00:00:00-08:00</published><updated>2025-03-05T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/05/prototype-code-review</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/05/prototype-code-review.html"><![CDATA[<p><strong>Hypothesis:</strong> Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.</p>
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+) They love the tutorial and how they can understand the PR (Request) They already have well documented Jira ticket. Reviewer spends a lot of time thinking if the PR is addressing the Jira. If the tool analyzes that and tells them the gaps, it will be super useful to them. (+) Loved the code architecture representation (-) There is a markdown rendering error for list items (-) There were initial bugs around assuming main branch and computing diff. Fixed and updated links]]></summary></entry><entry><title type="html">A Clearer Hypothesis: It’s All About Managing Complexity</title><link href="http://localhost:4000/projects/2025/03/06/narrowed-down-hypothesis.html" rel="alternate" type="text/html" title="A Clearer Hypothesis: It’s All About Managing Complexity" /><published>2025-03-06T00:00:00-08:00</published><updated>2025-03-06T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/06/narrowed-down-hypothesis</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/06/narrowed-down-hypothesis.html"><![CDATA[<p>We started with the vision of solving software architecture challenges for individuals and organizations. We launched two prototypes: design docs as an early-stage lever and code reviews as a final-stage check.</p>
+
+<p>Users found them useful, giving us confidence that we were exploring the right problem space. When we reviewed all the feedback, we realized that our tools and the challenges users faced were all connected by one thing: managing complexity. We also think that redefining the problem space as improving or understanding complexity is a much better way to articulate our approach. Improving architecture lacks clear measures, while complexity can be tracked and analyzed.</p>
+
+<p>Software complexity has real consequences. It slows down product development and affects developer happiness. Yet, there is no objective way to measure it. LLMs excel at compressing knowledge, making them a powerful tool for this challenge.</p>
+
+<p>We built a quick prototype to track repository complexity over time. It considers factors like module responsibilities and dependencies. The absolute complexity number matters less than the trend. Our goal is to plot complexity at any granularity, track how it changes, and offer solutions.</p>
+
+<p>The prototype will be ready in a few days. I will share an update soon.</p>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[We started with the vision of solving software architecture challenges for individuals and organizations. We launched two prototypes: design docs as an early-stage lever and code reviews as a final-stage check.]]></summary></entry><entry><title type="html">New Prototype: Help you do better code reviews</title><link href="http://localhost:4000/projects/2025/03/05/prototype-code-review.html" rel="alternate" type="text/html" title="New Prototype: Help you do better code reviews" /><published>2025-03-05T00:00:00-08:00</published><updated>2025-03-05T00:00:00-08:00</updated><id>http://localhost:4000/projects/2025/03/05/prototype-code-review</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/05/prototype-code-review.html"><![CDATA[<p><strong>Hypothesis:</strong> Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.</p>
 
 <p><strong>Solution:</strong> In many teams, developers walk reviewers through a diff to provide high-level context. This verbal explanation helps the reviewer load the changes into memory, making the review process more effective. Our AI aims to replicate this process by providing a guided walkthrough of any given diff.</p>
 
@@ -62,14 +80,32 @@
 
 <p>3.⁠ <a href="https://docs.google.com/document/d/1jKliP37kwhfQVTDBziLXuhFJMaI-PLv-sxzAKD5fIJs/edit?tab=t.0">⁠Alexandria Instructions</a></p>
 
-<p>Give it a try and let us know your thoughts!</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.]]></summary></entry><entry><title type="html">Learnings from Alexandria: Design Doc Writer</title><link href="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html" rel="alternate" type="text/html" title="Learnings from Alexandria: Design Doc Writer" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/alexandria-learnings</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html"><![CDATA[<ul>
+<p>Give it a try and let us know your thoughts!</p>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.]]></summary></entry><entry><title type="html">Learnings from Alexandria: Design Doc Writer</title><link href="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html" rel="alternate" type="text/html" title="Learnings from Alexandria: Design Doc Writer" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/alexandria-learnings</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html"><![CDATA[<ul>
   <li>(+)People loved mermaid diagrams</li>
   <li>(+)People wanted to use it for cases other than design docs. To write how-tos, internal guides</li>
   <li>(+)People used it to generate explanations for existing code</li>
   <li>(+)Saw a desire for having organizational controls on the tool being very opinionated</li>
   <li>(-)People who tried aren’t really writing the design doc at that moment</li>
   <li>(-)People didn’t really care to read the generated text</li>
-</ul>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+)People loved mermaid diagrams (+)People wanted to use it for cases other than design docs. To write how-tos, internal guides (+)People used it to generate explanations for existing code (+)Saw a desire for having organizational controls on the tool being very opinionated (-)People who tried aren’t really writing the design doc at that moment (-)People didn’t really care to read the generated text]]></summary></entry><entry><title type="html">Software Engineering Quality Problems</title><link href="http://localhost:4000/projects/2024/02/24/problem-space.html" rel="alternate" type="text/html" title="Software Engineering Quality Problems" /><published>2024-02-24T00:00:00-08:00</published><updated>2024-02-24T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/02/24/problem-space</id><content type="html" xml:base="http://localhost:4000/projects/2024/02/24/problem-space.html"><![CDATA[<p>Software Engineering Quality is a problem close to my heart, both as an Engineering Manager and Developer. I have strong opinions in this space and access to friends who can provide early feedback.</p>
+</ul>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+)People loved mermaid diagrams (+)People wanted to use it for cases other than design docs. To write how-tos, internal guides (+)People used it to generate explanations for existing code (+)Saw a desire for having organizational controls on the tool being very opinionated (-)People who tried aren’t really writing the design doc at that moment (-)People didn’t really care to read the generated text]]></summary></entry><entry><title type="html">Software Engineering Quality Problems</title><link href="http://localhost:4000/projects/2024/02/24/problem-space.html" rel="alternate" type="text/html" title="Software Engineering Quality Problems" /><published>2024-02-24T00:00:00-08:00</published><updated>2024-02-24T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/02/24/problem-space</id><content type="html" xml:base="http://localhost:4000/projects/2024/02/24/problem-space.html"><![CDATA[<p>Software Engineering Quality is a problem close to my heart, both as an Engineering Manager and Developer. I have strong opinions in this space and access to friends who can provide early feedback.</p>
 
 <p>The core challenge I’m focusing on: AI code generation is going to only increase and the lack of structured design thinking will lead to bloated, inconsistent architectures. While design phases are critical for decision-making, engineers often skip writing design docs, a key lever for this process. This creates issues down the line.</p>
 

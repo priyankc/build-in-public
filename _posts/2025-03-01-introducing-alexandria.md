@@ -20,3 +20,12 @@ xattr -c ~/Downloads/Alexandria.app
 3.⁠ [⁠Alexandria Instructions](https://docs.google.com/document/d/1jKliP37kwhfQVTDBziLXuhFJMaI-PLv-sxzAKD5fIJs/edit?tab=t.0)
 
 Give it a try and let us know your thoughts! 
+
+<style>
+    .site-footer {
+        display: none;
+    }
+    .post-title {
+        font-size: 36px;
+    }
+</style>

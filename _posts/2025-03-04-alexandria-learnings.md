@@ -10,3 +10,12 @@ categories: projects
 - (+)Saw a desire for having organizational controls on the tool being very opinionated
 - (-)People who tried aren't really writing the design doc at that moment
 - (-)People didn't really care to read the generated text
+
+<style>
+    .site-footer {
+        display: none;
+    }
+    .post-title {
+        font-size: 36px;
+    }
+</style>
