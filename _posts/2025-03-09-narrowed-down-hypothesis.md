@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Clearer Hypothesis: It’s All About Managing Complexity"
-date: 2025-03-06
+date: 2025-03-09
 categories: projects
 ---
 
