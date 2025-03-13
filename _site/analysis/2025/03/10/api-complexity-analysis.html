@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>An Example Complexity Report | Priyank Chodisetti</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="An Example Complexity Report" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Did this analysis using the Complexity Analysis tool. Ran this analysis on API end points." />
+<meta property="og:description" content="Did this analysis using the Complexity Analysis tool. Ran this analysis on API end points." />
+<link rel="canonical" href="http://localhost:4000/analysis/2025/03/10/api-complexity-analysis.html" />
+<meta property="og:url" content="http://localhost:4000/analysis/2025/03/10/api-complexity-analysis.html" />
+<meta property="og:site_name" content="Priyank Chodisetti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-10T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="An Example Complexity Report" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-10T00:00:00-07:00","datePublished":"2025-03-10T00:00:00-07:00","description":"Did this analysis using the Complexity Analysis tool. Ran this analysis on API end points.","headline":"An Example Complexity Report","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/analysis/2025/03/10/api-complexity-analysis.html"},"url":"http://localhost:4000/analysis/2025/03/10/api-complexity-analysis.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Priyank Chodisetti" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Priyank Chodisetti</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Building in Public | Updates</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">An Example Complexity Report</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-03-10T00:00:00-07:00" itemprop="datePublished">Mar 10, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Did this analysis using the Complexity Analysis tool. Ran this analysis on API end points.</p>
+
+<p>Repo: https://github.com/didinj/node-express-postgresql-sequelize/blob/master/routes/index.js</p>
+
+<h1 id="architecture-analysis">Architecture Analysis</h1>
+
+<h3 id="system-architecture-diagram">System Architecture Diagram</h3>
+
+<pre><code class="language-mermaid">flowchart LR
+    subgraph API_Routes ["API Routes"]
+        GET_Root["GET /\n(1)"]
+        GET_Classroom["GET /api/classroom\n(3)"]
+        GET_ClassroomById["GET /api/classroom/:id\n(4)"]
+        POST_Classroom["POST /api/classroom\n(4)"]
+        PUT_Classroom["PUT /api/classroom/:id\n(4)"]
+        DELETE_Classroom["DELETE /api/classroom/:id\n(4)"]
+        GET_Student["GET /api/student\n(3)"]
+        GET_StudentById["GET /api/student/:id\n(4)"]
+        POST_Student["POST /api/student\n(4)"]
+        PUT_Student["PUT /api/student/:id\n(4)"]
+        DELETE_Student["DELETE /api/student/:id\n(4)"]
+        GET_Lecturer["GET /api/lecturer\n(3)"]
+        GET_LecturerById["GET /api/lecturer/:id\n(4)"]
+        POST_Lecturer["POST /api/lecturer\n(4)"]
+        PUT_Lecturer["PUT /api/lecturer/:id\n(4)"]
+        DELETE_Lecturer["DELETE /api/lecturer/:id\n(4)"]
+        GET_Course["GET /api/course\n(3)"]
+        GET_CourseById["GET /api/course/:id\n(5)"]
+        POST_Course["POST /api/course\n(4)"]
+        PUT_Course["PUT /api/course/:id\n(5)"]
+        DELETE_Course["DELETE /api/course/:id\n(4)"]
+        POST_StudentAddCourse["POST /api/student/add_course\n(7)"]
+        POST_ClassroomAddWithStudents["POST /api/classroom/add_with_students\n(8)"]
+        POST_LecturerAddWithCourse["POST /api/lecturer/add_with_course\n(7)"]
+    end
+
+    subgraph Controllers ["Controllers"]
+        ClassroomController["Classroom Controller\n(6)"]
+        StudentController["Student Controller\n(7)"]
+        LecturerController["Lecturer Controller\n(6)"]
+        CourseController["Course Controller\n(5)"]
+    end
+    
+    subgraph Models ["Database Models"]
+        ClassroomModel["Classroom Model\n(3)"]
+        StudentModel["Student Model\n(4)"]
+        LecturerModel["Lecturer Model\n(3)"]
+        CourseModel["Course Model\n(4)"]
+        SequelizeCore["Sequelize Core\n(5)"]
+        StudentCourse["StudentCourse\n(Junction Table)"]
+    end
+
+    %% API Routes to Controllers
+    GET_Classroom --&gt; ClassroomController
+    GET_ClassroomById --&gt; ClassroomController
+    POST_Classroom --&gt; ClassroomController
+    PUT_Classroom --&gt; ClassroomController
+    DELETE_Classroom --&gt; ClassroomController
+    POST_ClassroomAddWithStudents --&gt; ClassroomController
+    
+    GET_Student --&gt; StudentController
+    GET_StudentById --&gt; StudentController
+    POST_Student --&gt; StudentController
+    PUT_Student --&gt; StudentController
+    DELETE_Student --&gt; StudentController
+    POST_StudentAddCourse --&gt; StudentController
+    
+    GET_Lecturer --&gt; LecturerController
+    GET_LecturerById --&gt; LecturerController
+    POST_Lecturer --&gt; LecturerController
+    PUT_Lecturer --&gt; LecturerController
+    DELETE_Lecturer --&gt; LecturerController
+    POST_LecturerAddWithCourse --&gt; LecturerController
+    
+    GET_Course --&gt; CourseController
+    GET_CourseById --&gt; CourseController
+    POST_Course --&gt; CourseController
+    PUT_Course --&gt; CourseController
+    DELETE_Course --&gt; CourseController
+    
+    %% Controllers to Models
+    ClassroomController --&gt; ClassroomModel
+    ClassroomController --&gt; StudentModel
+    StudentController --&gt; StudentModel
+    StudentController --&gt; ClassroomModel
+    StudentController --&gt; CourseModel
+    StudentController --&gt; StudentCourse
+    LecturerController --&gt; LecturerModel
+    LecturerController --&gt; CourseModel
+    CourseController --&gt; CourseModel
+    CourseController --&gt; StudentModel
+    CourseController --&gt; LecturerModel
+    
+    %% Model relationships
+    ClassroomModel --&gt; StudentModel
+    LecturerModel --&gt; CourseModel
+    StudentModel --&gt; CourseModel
+    StudentModel --&gt; StudentCourse
+    CourseModel --&gt; StudentCourse
+    CourseModel --&gt; LecturerModel
+    
+    %% Models to Sequelize
+    ClassroomModel --&gt; SequelizeCore
+    StudentModel --&gt; SequelizeCore
+    LecturerModel --&gt; SequelizeCore
+    CourseModel --&gt; SequelizeCore
+    StudentCourse --&gt; SequelizeCore
+
+    %% Styling
+    classDef low fill:#90EE90,stroke:#333,stroke-width:1px;
+    classDef medium fill:#FFD700,stroke:#333,stroke-width:1px;
+    classDef high fill:#FF6347,stroke:#333,stroke-width:1px;
+    
+    class GET_Root,GET_Classroom,GET_Student,GET_Lecturer,GET_Course,ClassroomModel,LecturerModel low;
+    class GET_ClassroomById,GET_StudentById,GET_LecturerById,GET_CourseById,POST_Classroom,POST_Student,POST_Lecturer,POST_Course,PUT_Classroom,PUT_Student,PUT_Lecturer,PUT_Course,DELETE_Classroom,DELETE_Student,DELETE_Lecturer,DELETE_Course,CourseController,StudentModel,CourseModel,SequelizeCore,StudentCourse medium;
+    class POST_StudentAddCourse,POST_LecturerAddWithCourse,POST_ClassroomAddWithStudents,StudentController,ClassroomController,LecturerController high;
+</code></pre>
+
+<h2 id="complexity-hotspots-analysis">Complexity Hotspots Analysis</h2>
+
+<p>After completing the architecture analysis, we’ve identified several high-complexity hotspots in the system that require attention. The following is a detailed analysis of each hotspot, ranked by severity:</p>
+
+<h3 id="1-post-apiclassroomadd_with_students-complexity-score-810">1. POST /api/classroom/add_with_students (Complexity Score: 8/10)</h3>
+
+<p><strong>Current Issues:</strong></p>
+<ul>
+  <li>Complex nested creation operation with two different models</li>
+  <li>No transaction management for multi-step operations</li>
+  <li>Risk of partial data creation on failure (classroom created but students not)</li>
+  <li>Missing validation for nested student data</li>
+  <li>No bulk insert optimization</li>
+  <li>Inconsistent error handling between parent and child operations</li>
+  <li>Poor error reporting that doesn’t indicate which part failed</li>
+</ul>
+
+<p><strong>Proposed Fixes:</strong></p>
+<ul>
+  <li>Implement explicit Sequelize transactions to ensure atomicity</li>
+  <li>Add comprehensive validation for both classroom and student data</li>
+  <li>Use Sequelize bulk insert capabilities for student creation</li>
+  <li>Standardize error handling with specific error types</li>
+  <li>Improve error messages to indicate the exact failure point</li>
+  <li>Add database constraints to ensure data integrity</li>
+</ul>
+
+<p><strong>Effort &amp; Impact:</strong></p>
+<ul>
+  <li><strong>Effort:</strong> Medium (3-5 engineering days)</li>
+  <li><strong>Impact:</strong> High (Prevents data inconsistency, improves error handling)</li>
+</ul>
+
+<h3 id="2-post-apistudentadd_course-complexity-score-710">2. POST /api/student/add_course (Complexity Score: 7/10)</h3>
+
+<p><strong>Current Issues:</strong></p>
+<ul>
+  <li>Many-to-many relationship management without transaction safety</li>
+  <li>Potential race conditions when multiple students enroll concurrently</li>
+  <li>Excessive database queries without batching</li>
+  <li>No validation that the course exists before relationship creation</li>
+  <li>Missing validation for course enrollment eligibility</li>
+  <li>No handling of duplicate enrollment attempts</li>
+</ul>
+
+<p><strong>Proposed Fixes:</strong></p>
+<ul>
+  <li>Implement explicit transaction management</li>
+  <li>Add pre-validation of course existence and enrollment eligibility</li>
+  <li>Create a robust duplicate enrollment detection mechanism</li>
+  <li>Optimize with bulk operations where possible</li>
+  <li>Implement proper error handling with specific error types</li>
+  <li>Add concurrency control for high-volume enrollment periods</li>
+</ul>
+
+<p><strong>Effort &amp; Impact:</strong></p>
+<ul>
+  <li><strong>Effort:</strong> Medium (2-4 engineering days)</li>
+  <li><strong>Impact:</strong> High (Prevents data inconsistency, improves performance)</li>
+</ul>
+
+<h3 id="3-post-apilectureradd_with_course-complexity-score-710">3. POST /api/lecturer/add_with_course (Complexity Score: 7/10)</h3>
+
+<p><strong>Current Issues:</strong></p>
+<ul>
+  <li>Nested creation with one-to-many relationship</li>
+  <li>No transaction management for multi-step operations</li>
+  <li>Risk of partial data creation on failure</li>
+  <li>Missing validation for course data</li>
+  <li>Inconsistent error handling</li>
+  <li>No checks for existing relationships before creating</li>
+</ul>
+
+<p><strong>Proposed Fixes:</strong></p>
+<ul>
+  <li>Add transaction management for atomicity</li>
+  <li>Implement comprehensive validation for both lecturer and course data</li>
+  <li>Improve error handling with specific error types</li>
+  <li>Add checks for existing relationships</li>
+  <li>Standardize response formats for success and failure cases</li>
+  <li>Create reusable patterns for nested entity creation</li>
+</ul>
+
+<p><strong>Effort &amp; Impact:</strong></p>
+<ul>
+  <li><strong>Effort:</strong> Medium (2-4 engineering days)</li>
+  <li><strong>Impact:</strong> Medium-High (Prevents data inconsistency, improves reliability)</li>
+</ul>
+
+<h3 id="4-student-controller-complexity-score-710">4. Student Controller (Complexity Score: 7/10)</h3>
+
+<p><strong>Current Issues:</strong></p>
+<ul>
+  <li>Manages multiple complex relationships</li>
+  <li>Handles many-to-many relationship with courses without transaction safety</li>
+  <li>Implements multiple model dependencies increasing coupling</li>
+  <li>Contains complex nested queries</li>
+  <li>Has inconsistent error handling patterns</li>
+  <li>Lacks proper validation before database operations</li>
+</ul>
+
+<p><strong>Proposed Fixes:</strong></p>
+<ul>
+  <li>Extract relationship management into service classes</li>
+  <li>Implement consistent transaction patterns</li>
+  <li>Add comprehensive validation using middleware</li>
+  <li>Create standardized error handling utilities</li>
+  <li>Restructure to reduce coupling with multiple models</li>
+  <li>Implement query optimization for common operations</li>
+</ul>
+
+<p><strong>Effort &amp; Impact:</strong></p>
+<ul>
+  <li><strong>Effort:</strong> High (5-8 engineering days)</li>
+  <li><strong>Impact:</strong> High (Improves maintainability, reduces bugs)</li>
+</ul>
+
+<h3 id="5-get-apicourseid-complexity-score-510">5. GET /api/course/:id (Complexity Score: 5/10)</h3>
+
+<p><strong>Current Issues:</strong></p>
+<ul>
+  <li>Circular reference issue: includes Course model within itself</li>
+  <li>Incorrect eager loading causing potential errors</li>
+  <li>Performance issues with unnecessary data retrieval</li>
+  <li>Inconsistent error response codes (404 vs 400)</li>
+</ul>
+
+<p><strong>Proposed Fixes:</strong></p>
+<ul>
+  <li>Fix the circular reference by correctly specifying related models</li>
+  <li>Optimize the query to load only necessary data</li>
+  <li>Standardize error response patterns</li>
+  <li>Implement consistent response structures</li>
+</ul>
+
+<p><strong>Effort &amp; Impact:</strong></p>
+<ul>
+  <li><strong>Effort:</strong> Low (1-2 engineering days)</li>
+  <li><strong>Impact:</strong> Medium (Fixes errors, improves performance)</li>
+</ul>
+
+<h2 id="system-wide-architectural-issues">System-Wide Architectural Issues</h2>
+
+<p>Beyond the specific hotspots, our analysis reveals several system-wide issues that should be addressed:</p>
+
+<ol>
+  <li><strong>Lack of Transaction Management:</strong>
+    <ul>
+      <li>None of the controllers implement explicit transactions for multi-step operations</li>
+      <li>Recommendation: Create a transaction middleware or utility function for consistent usage</li>
+    </ul>
+  </li>
+  <li><strong>Inconsistent Error Handling:</strong>
+    <ul>
+      <li>Error handling varies across controllers with mixed HTTP status codes</li>
+      <li>Recommendation: Implement a centralized error handling mechanism with consistent patterns</li>
+    </ul>
+  </li>
+  <li><strong>Model Relationship Management:</strong>
+    <ul>
+      <li>Complex relationships are managed directly in controllers without abstraction</li>
+      <li>Recommendation: Create service classes to handle relationship management</li>
+    </ul>
+  </li>
+  <li><strong>Query Optimization Issues:</strong>
+    <ul>
+      <li>Potential N+1 query problems with eager loading in several endpoints</li>
+      <li>Recommendation: Audit all eager loading patterns and optimize with includes</li>
+    </ul>
+  </li>
+  <li><strong>Validation Gaps:</strong>
+    <ul>
+      <li>Limited input validation before database operations</li>
+      <li>Recommendation: Implement comprehensive validation middleware</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="recommended-next-steps">Recommended Next Steps</h2>
+
+<p>Based on our analysis, here’s the recommended sequence of refactoring operations:</p>
+
+<ol>
+  <li>First address the critical POST endpoints with complexity scores of 7 or higher:
+    <ul>
+      <li>Implement transaction management in POST /api/classroom/add_with_students</li>
+      <li>Fix validation and error handling in POST /api/student/add_course</li>
+      <li>Address the atomicity issues in POST /api/lecturer/add_with_course</li>
+    </ul>
+  </li>
+  <li>Create system-wide improvements:
+    <ul>
+      <li>Develop a transaction utility for consistent usage across controllers</li>
+      <li>Implement standardized error handling middleware</li>
+      <li>Create a validation framework for all endpoints</li>
+    </ul>
+  </li>
+  <li>Address secondary issues:
+    <ul>
+      <li>Fix the circular reference in GET /api/course/:id</li>
+      <li>Optimize query patterns across all controllers</li>
+      <li>Refactor the Student Controller to reduce complexity</li>
+    </ul>
+  </li>
+</ol>
+
+<p>By following this approach, the system will gain significant improvements in reliability, maintainability, and performance while reducing the risk of data inconsistency issues.</p>
+
+<p>Final complexity assessment complete. No further processing required.</p>
+
+<h2 id="overall-system-complexity">Overall System Complexity</h2>
+
+<h3 id="system-name-express-postgresql-api-score-610">System Name: Express PostgreSQL API (Score: 6/10)</h3>
+
+<p><strong>System-Level Metrics:</strong></p>
+<ul>
+  <li>Total Dependencies: 10</li>
+  <li>Core Responsibilities: 21</li>
+</ul>
+
+<p><strong>Reasons for System Complexity:</strong></p>
+<ul>
+  <li>Multiple interconnected entity models</li>
+  <li>Complex relationships (one-to-many, many-to-many)</li>
+  <li>Nested creation operations</li>
+  <li>Lack of transaction management</li>
+  <li>Inconsistent error handling</li>
+  <li>Potential N+1 query issues</li>
+  <li>Circular references in API design</li>
+</ul>
+
+<h2 id="component-complexity-analysis">Component Complexity Analysis</h2>
+
+<h3 id="course-controller-score-510">Course Controller (Score: 5/10)</h3>
+
+<p><strong>Complexity Breakdown:</strong></p>
+<ul>
+  <li>Dependencies: 3</li>
+  <li>Responsibilities: 5</li>
+</ul>
+
+<p><strong>Reasons for Complexity:</strong></p>
+<ul>
+  <li>Manages CRUD operations for courses</li>
+  <li>Handles relationships with Students and Lecturers</li>
+  <li>Implements eager loading of related entities</li>
+  <li>Contains error handling for various scenarios</li>
+  <li>Has some inconsistent error handling (404 vs 400)</li>
+</ul>
+
+<h3 id="student-model-score-410">Student Model (Score: 4/10)</h3>
+
+<p><strong>Complexity Breakdown:</strong></p>
+<ul>
+  <li>Dependencies: 2</li>
+  <li>Responsibilities: 2</li>
+</ul>
+
+<p><strong>Reasons for Complexity:</strong></p>
+<ul>
+  <li>Defines many-to-many relationship with Course model</li>
+  <li>Defines belongs-to relationship with Classroom model</li>
+  <li>Uses junction table (StudentCourse) for course relationships</li>
+</ul>
+
+<h3 id="course-model-score-410">Course Model (Score: 4/10)</h3>
+
+<p><strong>Complexity Breakdown:</strong></p>
+<ul>
+  <li>Dependencies: 2</li>
+  <li>Responsibilities: 2</li>
+</ul>
+
+<p><strong>Reasons for Complexity:</strong></p>
+<ul>
+  <li>Defines many-to-many relationship with Student model</li>
+  <li>Defines belongs-to relationship with Lecturer model</li>
+  <li>Uses junction table (StudentCourse) for student relationships</li>
+</ul>
+
+<h3 id="classroom-model-score-310">Classroom Model (Score: 3/10)</h3>
+
+<p><strong>Complexity Breakdown:</strong></p>
+<ul>
+  <li>Dependencies: 1</li>
+  <li>Responsibilities: 1</li>
+</ul>
+
+<p><strong>Reasons for Complexity:</strong></p>
+<ul>
+  <li>Defines one-to-many relationship with Student model</li>
+  <li>Simple data structure with minimal properties</li>
+</ul>
+
+<h3 id="lecturer-model-score-310">Lecturer Model (Score: 3/10)</h3>
+
+<p><strong>Complexity Breakdown:</strong></p>
+<ul>
+  <li>Dependencies: 1</li>
+  <li>Responsibilities: 1</li>
+</ul>
+
+<p><strong>Reasons for Complexity:</strong></p>
+<ul>
+  <li>Defines one-to-one relationship with Course model</li>
+  <li>Simple data structure with minimal properties</li>
+</ul>
+
+<h2 id="hotspots-analysis">Hotspots Analysis</h2>
+
+<h3 id="post-apiclassroomadd_with_students-score-8">POST /api/classroom/add_with_students (Score: 8)</h3>
+
+<p><strong>Issues:</strong></p>
+<ul>
+  <li>Complex nested creation operation with two models</li>
+  <li>No transaction management for multi-step operations</li>
+  <li>Risk of partial data creation on failure</li>
+  <li>Missing validation for nested student data</li>
+  <li>No bulk insert optimization</li>
+  <li>Inconsistent error handling between parent and child operations</li>
+  <li>Poor error reporting that doesn’t indicate which part failed</li>
+</ul>
+
+<p><strong>Refactoring Strategy:</strong>
+Implement explicit transactions, add comprehensive validation, use Sequelize hooks for better error handling, and implement bulk inserts for improved performance.</p>
+
+<h3 id="post-apistudentadd_course-score-7">POST /api/student/add_course (Score: 7)</h3>
+
+<p><strong>Issues:</strong></p>
+<ul>
+  <li>Many-to-many relationship management without transaction safety</li>
+  <li>Potential race conditions when multiple concurrent operations occur</li>
+  <li>Excessive database queries without batching</li>
+  <li>No validation that the course exists before relationship creation</li>
+  <li>Missing validation for course enrollment eligibility</li>
+  <li>No handling of duplicate enrollment attempts</li>
+</ul>
+
+<p><strong>Refactoring Strategy:</strong>
+Implement explicit transaction management, add pre-validation of course existence, handle duplicate enrollments gracefully, optimize with bulk operations, and add proper error handling for common failure cases.</p>
+
+<h3 id="post-apilectureradd_with_course-score-7">POST /api/lecturer/add_with_course (Score: 7)</h3>
+
+<p><strong>Issues:</strong></p>
+<ul>
+  <li>Nested creation with one-to-many relationship</li>
+  <li>No transaction management for multi-step operations</li>
+  <li>Risk of partial data creation on failure</li>
+  <li>Missing validation for course data</li>
+  <li>Inconsistent error handling</li>
+  <li>No checks for existing relationships before creating</li>
+</ul>
+
+<p><strong>Refactoring Strategy:</strong>
+Add transaction management, implement comprehensive validation for both lecturer and course data, improve error handling with specific error types, and ensure atomicity of the creation process.</p>
+
+<h3 id="student-controller-score-7">Student Controller (Score: 7)</h3>
+
+<p><strong>Issues:</strong></p>
+<ul>
+  <li>Manages multiple complex relationships</li>
+  <li>Handles many-to-many relationship with courses without transaction safety</li>
+  <li>Implements multiple model dependencies increasing coupling</li>
+  <li>Contains complex nested queries</li>
+  <li>Has inconsistent error handling patterns</li>
+  <li>Lacks proper validation before database operations</li>
+</ul>
+
+<p><strong>Refactoring Strategy:</strong>
+Extract relationship management into service classes, implement consistent transaction patterns, add comprehensive validation, and restructure error handling with standardized responses.</p>
+
+<h3 id="get-apicourseid-score-5">GET /api/course/:id (Score: 5)</h3>
+
+<p><strong>Issues:</strong></p>
+<ul>
+  <li>Circular reference issue: includes Course model within itself</li>
+  <li>Incorrect eager loading causing potential errors</li>
+  <li>Performance issues with unnecessary data retrieval</li>
+  <li>Inconsistent error response codes (404 vs 400)</li>
+</ul>
+
+<p><strong>Refactoring Strategy:</strong>
+Fix the circular reference by correctly specifying related models, standardize error response patterns, and optimize the query to load only necessary data.</p>
+
+<h2 id="current-phase">Current Phase</h2>
+
+<ul>
+  <li>Phase: analysis</li>
+  <li>Complete: Yes</li>
+</ul>
+
+<h2 id="files-processed">Files Processed</h2>
+
+<ul>
+  <li>/Users/priyank/Dev/node-express-postgresql-sequelize/controllers/course.js</li>
+  <li>/Users/priyank/Dev/node-express-postgresql-sequelize/models/student.js</li>
+  <li>/Users/priyank/Dev/node-express-postgresql-sequelize/models/classroom.js</li>
+  <li>/Users/priyank/Dev/node-express-postgresql-sequelize/models/course.js</li>
+  <li>/Users/priyank/Dev/node-express-postgresql-sequelize/models/lecturer.js</li>
+</ul>
+
+<h2 id="next-files-to-process">Next Files to Process</h2>
+
+  </div><a class="u-url" href="/analysis/2025/03/10/api-complexity-analysis.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Priyank Chodisetti</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Priyank Chodisetti</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
