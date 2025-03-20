@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-12T22:53:23-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">Run Complexity Analysis on your Repo</title><link href="http://localhost:4000/projects/2025/03/12/complexity-analysis.html" rel="alternate" type="text/html" title="Run Complexity Analysis on your Repo" /><published>2025-03-12T00:00:00-07:00</published><updated>2025-03-12T00:00:00-07:00</updated><id>http://localhost:4000/projects/2025/03/12/complexity-analysis</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/12/complexity-analysis.html"><![CDATA[<p>We have a version that you can use on your desktop to do complexity analysis.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-19T21:37:15-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Priyank Chodisetti</title><entry><title type="html">Let Claue Code control your NodeJS debugger</title><link href="http://localhost:4000/projects/2025/03/19/vibe-debugging.html" rel="alternate" type="text/html" title="Let Claue Code control your NodeJS debugger" /><published>2025-03-19T00:00:00-07:00</published><updated>2025-03-19T00:00:00-07:00</updated><id>http://localhost:4000/projects/2025/03/19/vibe-debugging</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/19/vibe-debugging.html"><![CDATA[<p><b>Problem<b></b></b></p>
+
+<p>We experienced debugging death loop while vibe coding.</p>
+
+<p>Debugging Death Loop:</p>
+<ul>
+  <li>Copy the exception or error</li>
+  <li>Paste it into Claude/Cursor</li>
+  <li>Hope it will fix it.</li>
+</ul>
+
+<p>It will fail, and you will try again hoping it will get it this time. Pretty soon, it will become 20 times and frustrating. No more vibes!</p>
+
+<p><b>Current Options<b></b></b></p>
+
+<p>When researched online, the current options are:</p>
+<ul>
+  <li>Understand code better: I think this is preaching old ways to new class of programmers - vibe coders.</li>
+  <li>Add log lines: To be effective, you should understand code better.</li>
+</ul>
+
+<p>We thought about how an experienced programmer approach programming - by using a debugger and stepping through code. What if we allow Claude Code to set breakpoints, step through code and inspect variables?</p>
+
+<p><b>Solution<b></b></b></p>
+
+<p>We built an MCP server for exactly that. You can try yourself:</p>
+<ol>
+  <li>Run your NodeJS server with <code class="language-plaintext highlighter-rouge">--inspect</code> flag that accepts remote debugger</li>
+  <li>Add our MCP using the following command <code class="language-plaintext highlighter-rouge">claude mcp add nodejs-debugger npx @hyperdrive-eng/mcp-nodejs-debugger</code></li>
+  <li>Sit back and enjoy the magic with Claude debugging yoru code!</li>
+</ol>
+
+<p><b>Important Links<b></b></b></p>
+<ul>
+  <li><a href="https://github.com/hyperdrive-eng/mcp-nodejs-debugger">Github Repo</a></li>
+  <li><a href="https://www.npmjs.com/package/@hyperdrive-eng/mcp-nodejs-debugger">NPM Package</a></li>
+</ul>
+
+<h3 id="demo">Demo</h3>
+<iframe width="800" height="605" src="/assets/videos/mcp-nodejs-debugger.mp4" frameborder="0" allowfullscreen=""></iframe>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+    iframe {
+        margin-top: 0;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Problem]]></summary></entry><entry><title type="html">Learnings from Complexity Analysis Prototype</title><link href="http://localhost:4000/projects/2025/03/15/complexity-learnings.html" rel="alternate" type="text/html" title="Learnings from Complexity Analysis Prototype" /><published>2025-03-15T00:00:00-07:00</published><updated>2025-03-15T00:00:00-07:00</updated><id>http://localhost:4000/projects/2025/03/15/complexity-learnings</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/15/complexity-learnings.html"><![CDATA[<ul>
+  <li>(+) They love the insights about highly complex components.</li>
+  <li>(+) People liked relative priritization of fixes proposed.</li>
+  <li>(+) People absolutely loved the entire architecture diagram produced.</li>
+  <li>(-) Complexity is not how folks think day to day.</li>
+  <li>(-) People said they might use it a couple of times now and then.</li>
+  <li>(-) Bottle neck is not the lack of knowledge, but lack of resources to prioritize.</li>
+  <li>(-) Business priorities mostly trump tech health. Many users we talked to would push state of things to the edge of failure and squeeze every last min for business priorities.</li>
+  <li>(-) Complexity as a concept is too theoritical and not currently operational. No one is truly burned by this problem directly. It’s not like many of them are actively looking for solutions to solve it.</li>
+</ul>
+
+<p><b>Takeaway<b></b></b></p>
+
+<p>We decided to narrow down our ICP from software engineers in traditional enterprises to Vibe coders! Reasons are two fold:</p>
+<ol>
+  <li>We ourselves are Vibe Coders and can more directly solve our own problems by using our experience as traditional developers.</li>
+  <li>Challenges with Vibe coding are urgent problems for Vibe Coders! Quality of solutions will make or break a Vibe Coder’s ongoing projects as they would lack skill or resources to approach the same challenges using more traditional software engineering methods.</li>
+</ol>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+) They love the insights about highly complex components. (+) People liked relative priritization of fixes proposed. (+) People absolutely loved the entire architecture diagram produced. (-) Complexity is not how folks think day to day. (-) People said they might use it a couple of times now and then. (-) Bottle neck is not the lack of knowledge, but lack of resources to prioritize. (-) Business priorities mostly trump tech health. Many users we talked to would push state of things to the edge of failure and squeeze every last min for business priorities. (-) Complexity as a concept is too theoritical and not currently operational. No one is truly burned by this problem directly. It’s not like many of them are actively looking for solutions to solve it.]]></summary></entry><entry><title type="html">Run Complexity Analysis on your Repo</title><link href="http://localhost:4000/projects/2025/03/12/complexity-analysis.html" rel="alternate" type="text/html" title="Run Complexity Analysis on your Repo" /><published>2025-03-12T00:00:00-07:00</published><updated>2025-03-12T00:00:00-07:00</updated><id>http://localhost:4000/projects/2025/03/12/complexity-analysis</id><content type="html" xml:base="http://localhost:4000/projects/2025/03/12/complexity-analysis.html"><![CDATA[<p>We have a version that you can use on your desktop to do complexity analysis.</p>
 
 <ul>
   <li>
@@ -606,7 +685,23 @@ Fix the circular reference by correctly specifying related models, standardize e
     .post-title {
         font-size: 36px;
     }
-</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Hypothesis: Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.]]></summary></entry><entry><title type="html">Introducing Alexandria: A Modern Design Doc Writing Tool</title><link href="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html" rel="alternate" type="text/html" title="Introducing Alexandria: A Modern Design Doc Writing Tool" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/introducing-alexandria</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html"><![CDATA[<p>Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.</p>
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Hypothesis: Code reviews are a big part of developers job. It takes time to process at a high level what a diff is about. It leads to longer cycle times. Faster comprehension of diffs leads to quicker, higher-quality code reviews, reducing cycle times.]]></summary></entry><entry><title type="html">Learnings from Alexandria: Design Doc Writer</title><link href="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html" rel="alternate" type="text/html" title="Learnings from Alexandria: Design Doc Writer" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/alexandria-learnings</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html"><![CDATA[<ul>
+  <li>(+)People loved mermaid diagrams</li>
+  <li>(+)People wanted to use it for cases other than design docs. To write how-tos, internal guides</li>
+  <li>(+)People used it to generate explanations for existing code</li>
+  <li>(+)Saw a desire for having organizational controls on the tool being very opinionated</li>
+  <li>(-)People who tried aren’t really writing the design doc at that moment</li>
+  <li>(-)People didn’t really care to read the generated text</li>
+</ul>
+
+<style>
+    .site-footer {
+        display: none;
+    }
+    .post-title {
+        font-size: 36px;
+    }
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+)People loved mermaid diagrams (+)People wanted to use it for cases other than design docs. To write how-tos, internal guides (+)People used it to generate explanations for existing code (+)Saw a desire for having organizational controls on the tool being very opinionated (-)People who tried aren’t really writing the design doc at that moment (-)People didn’t really care to read the generated text]]></summary></entry><entry><title type="html">Introducing Alexandria: A Modern Design Doc Writing Tool</title><link href="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html" rel="alternate" type="text/html" title="Introducing Alexandria: A Modern Design Doc Writing Tool" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/introducing-alexandria</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/introducing-alexandria.html"><![CDATA[<p>Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.</p>
 
 <p>Installation:
 1.⁠ <a href="https://drive.google.com/file/d/1AR9tz7W1YGqCpRvn8O5HUM2vo59d9fj4/view?usp=drive_link">⁠Alexandria App (Mac Silicone)</a></p>
@@ -628,23 +723,7 @@ Fix the circular reference by correctly specifying related models, standardize e
     .post-title {
         font-size: 36px;
     }
-</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.]]></summary></entry><entry><title type="html">Learnings from Alexandria: Design Doc Writer</title><link href="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html" rel="alternate" type="text/html" title="Learnings from Alexandria: Design Doc Writer" /><published>2024-03-01T00:00:00-08:00</published><updated>2024-03-01T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/03/01/alexandria-learnings</id><content type="html" xml:base="http://localhost:4000/projects/2024/03/01/alexandria-learnings.html"><![CDATA[<ul>
-  <li>(+)People loved mermaid diagrams</li>
-  <li>(+)People wanted to use it for cases other than design docs. To write how-tos, internal guides</li>
-  <li>(+)People used it to generate explanations for existing code</li>
-  <li>(+)Saw a desire for having organizational controls on the tool being very opinionated</li>
-  <li>(-)People who tried aren’t really writing the design doc at that moment</li>
-  <li>(-)People didn’t really care to read the generated text</li>
-</ul>
-
-<style>
-    .site-footer {
-        display: none;
-    }
-    .post-title {
-        font-size: 36px;
-    }
-</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[(+)People loved mermaid diagrams (+)People wanted to use it for cases other than design docs. To write how-tos, internal guides (+)People used it to generate explanations for existing code (+)Saw a desire for having organizational controls on the tool being very opinionated (-)People who tried aren’t really writing the design doc at that moment (-)People didn’t really care to read the generated text]]></summary></entry><entry><title type="html">Software Engineering Quality Problems</title><link href="http://localhost:4000/projects/2024/02/24/problem-space.html" rel="alternate" type="text/html" title="Software Engineering Quality Problems" /><published>2024-02-24T00:00:00-08:00</published><updated>2024-02-24T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/02/24/problem-space</id><content type="html" xml:base="http://localhost:4000/projects/2024/02/24/problem-space.html"><![CDATA[<p>Software Engineering Quality is a problem close to my heart, both as an Engineering Manager and Developer. I have strong opinions in this space and access to friends who can provide early feedback.</p>
+</style>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Following our exploration of design doc challenges, we built Alexandria - a prototype to make technical writing easier.]]></summary></entry><entry><title type="html">Software Engineering Quality Problems</title><link href="http://localhost:4000/projects/2024/02/24/problem-space.html" rel="alternate" type="text/html" title="Software Engineering Quality Problems" /><published>2024-02-24T00:00:00-08:00</published><updated>2024-02-24T00:00:00-08:00</updated><id>http://localhost:4000/projects/2024/02/24/problem-space</id><content type="html" xml:base="http://localhost:4000/projects/2024/02/24/problem-space.html"><![CDATA[<p>Software Engineering Quality is a problem close to my heart, both as an Engineering Manager and Developer. I have strong opinions in this space and access to friends who can provide early feedback.</p>
 
 <p>The core challenge I’m focusing on: AI code generation is going to only increase and the lack of structured design thinking will lead to bloated, inconsistent architectures. While design phases are critical for decision-making, engineers often skip writing design docs, a key lever for this process. This creates issues down the line.</p>
 
